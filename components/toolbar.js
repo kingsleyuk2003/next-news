@@ -10,9 +10,9 @@ export const Toolbar = () => {
       <div onClick={() => router.push("/feed/1")}>Feed</div>
       <div onClick={() => router.push("/eom")}>EOM</div>
       <div
-        onClick={() => (window.location.href = "https://twitter.com/portexe")}
+        onClick={() => (window.location.href = "https://facebook.com/portexe")}
       >
-        Twitter
+        Facebook
       </div>
     </div>
   );

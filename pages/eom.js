@@ -28,7 +28,7 @@ export const EOM = ({ employee }) => {
       </Head>
 
       <div className="page-container">
-        <Toolbar />
+        
 
         <div className={styles.main}>
           <h1>Employee Of The Month</h1>
