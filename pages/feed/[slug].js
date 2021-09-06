@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "../../styles/Feed.module.css";
-import { Toolbar } from "../../components/toolbar";
+
 
 export const Feed = ({ articles, pageNumber }) => {
   const router = useRouter();
@@ -14,6 +14,7 @@ export const Feed = ({ articles, pageNumber }) => {
       </Head>
       <div className="page-container">
        
+
         <div className={styles.main}>
           {articles.map((article, index) => (
             <div key={index} className={styles.post}>
@@ -40,11 +41,10 @@ export const Feed = ({ articles, pageNumber }) => {
                   .push(`/feed/${pageNumber - 1}`)
                   .then(() => window.scrollTo(0, 0));
               }
-            }}
+            }}   
           >
             Previous Page
-          </div>
-
+          </div>   
           <div>#{pageNumber}</div>
 
           <div
@@ -69,7 +69,7 @@ export const Feed = ({ articles, pageNumber }) => {
     </>
   ) : (
     <div className="page-container">
-     
+  
       <div className={styles.main}>
         <h1>Oops! No articles for this page</h1>
       </div>
@@ -79,7 +79,7 @@ export const Feed = ({ articles, pageNumber }) => {
 
 export const getServerSideProps = async (pageContext) => {
   const pageNumber = pageContext.query.slug;
-
+debugger;
   if (!pageNumber || pageNumber < 1 || pageNumber > 5) {
     return {
       props: {
